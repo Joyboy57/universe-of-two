@@ -1,0 +1,17 @@
+# OPTIONAL. Only needed if you two live in very different timezones.
+# Vercel's free plan runs the daily job once a day. This pings it every hour instead,
+# so each of you gets your note at your OWN chosen hour.
+# To enable: move this file to .github/workflows/notify-hourly.yml, then in GitHub
+# repo > Settings > Secrets and variables > Actions, add:
+#   APP_URL     e.g. https://your-app.vercel.app   (no trailing slash)
+#   CRON_SECRET the same value as in Vercel
+name: notify-hourly
+on:
+  schedule:
+    - cron: "5 * * * *"
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl -fsS -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}" "${{ secrets.APP_URL }}/api/cron/daily"
