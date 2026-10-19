@@ -1,6 +1,8 @@
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
 
+type CookieToSet = { name: string; value: string; options?: object };
+
 export async function supabaseServer() {
   const cookieStore = await cookies();
   return createServerClient(
@@ -9,9 +11,9 @@ export async function supabaseServer() {
     {
       cookies: {
         getAll: () => cookieStore.getAll(),
-        setAll: (list) => {
+        setAll: (list: CookieToSet[]) => {
           try {
-            list.forEach(({ name, value, options }) => cookieStore.set(name, value, options));
+            list.forEach(({ name, value, options }) => cookieStore.set(name, value, options as never));
           } catch {
             // called from a Server Component; safe to ignore
           }
