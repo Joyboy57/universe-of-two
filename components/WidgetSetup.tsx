@@ -70,7 +70,7 @@ export function WidgetSetup({ hasLink }: { hasLink: boolean }) {
 
           <div className="card space-y-3">
             <p className="font-semibold">Your private link</p>
-            <p className="break-all rounded-2xl bg-[var(--bg)] p-3 text-sm">{made.url}</p>
+            <p className="break-all rounded-2xl bg-[var(--inset)] p-3 text-sm">{made.url}</p>
             <button className="btn btn-quiet" onClick={() => copy("link", made.url)}>{copied === "link" ? "Copied" : "Copy link"}</button>
             <p className="text-sm text-[var(--ink-soft)]">Anyone with this link can see your photo swap, so don't share it. You can turn it off any time.</p>
           </div>
@@ -83,7 +83,7 @@ export function WidgetSetup({ hasLink }: { hasLink: boolean }) {
               <li>On the Home Screen: long-press, tap <b>+</b>, choose <b>Scriptable</b>, pick a size, then <b>Add Widget</b>.</li>
               <li>Tap the new widget, choose <b>Script: Universe</b>, then tap outside to finish.</li>
             </ol>
-            <pre className="max-h-64 overflow-auto rounded-2xl bg-[var(--bg)] p-3 text-xs">{scriptFor(made.url, made.site)}</pre>
+            <pre className="max-h-64 overflow-auto rounded-2xl bg-[var(--inset)] p-3 text-xs">{scriptFor(made.url, made.site)}</pre>
             <button className="btn btn-quiet" onClick={() => copy("script", scriptFor(made.url, made.site))}>{copied === "script" ? "Copied" : "Copy script"}</button>
             <p className="text-xs text-[var(--ink-soft)]">iPhone decides how often a widget refreshes (about every 15 minutes or more), so new photos may take a little while to show.</p>
           </div>
@@ -92,7 +92,7 @@ export function WidgetSetup({ hasLink }: { hasLink: boolean }) {
             <p className="font-semibold">Android</p>
             <p className="text-[var(--ink-soft)]">
               Use any widget app that can show a picture from a web address, and give it your link. Add
-              <code className="mx-1 rounded bg-[var(--bg)] px-1">&amp;size=medium</code> or <code className="mx-1 rounded bg-[var(--bg)] px-1">&amp;size=large</code>
+              <code className="mx-1 rounded bg-[var(--inset)] px-1">&amp;size=medium</code> or <code className="mx-1 rounded bg-[var(--inset)] px-1">&amp;size=large</code>
               to the end for a wider or bigger picture. I couldn't check the exact steps for specific Android widget apps, so tell me which one you use.
             </p>
           </div>

@@ -34,7 +34,7 @@ function SongRow({ song, by }: { song: Song; by: string }) {
       <div className="flex items-center gap-3">
         <a href={song.url} target="_blank" rel="noopener noreferrer" className="flex min-w-0 flex-1 items-center gap-3" aria-label={`Open ${song.title} in ${providerOf(song.url)}`}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          {song.cover_url ? <img src={song.cover_url} alt="" loading="lazy" className="h-14 w-14 shrink-0 rounded-xl object-cover" /> : <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-[var(--bg)] text-2xl" aria-hidden="true">🎵</span>}
+          {song.cover_url ? <img src={song.cover_url} alt="" loading="lazy" className="h-14 w-14 shrink-0 rounded-xl object-cover" /> : <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-[var(--inset)] text-2xl" aria-hidden="true">🎵</span>}
           <span className="min-w-0 flex-1">
             <span className="block truncate font-semibold">{song.title}</span>
             <span className="block truncate text-sm text-[var(--ink-soft)]">{[song.artist, `added by ${by}`].filter(Boolean).join(" · ")}</span>
@@ -42,7 +42,7 @@ function SongRow({ song, by }: { song: Song; by: string }) {
           </span>
         </a>
       </div>
-      {song.note && <p className="mt-2 rounded-xl bg-[var(--bg)] px-3 py-2 text-sm">“{song.note}”</p>}
+      {song.note && <p className="mt-2 rounded-xl bg-[var(--inset)] px-3 py-2 text-sm">“{song.note}”</p>}
       <details className="mt-2">
         <summary className="cursor-pointer text-sm text-[var(--ink-soft)] underline underline-offset-4">{isSearch ? "Set the exact Spotify link" : "Change link or remove"}</summary>
         <div className="mt-3 space-y-3">

@@ -85,13 +85,13 @@ export default async function TimelinePage({ searchParams }: { searchParams: Pro
                 const upcoming = e.date > today;
                 return (
                   <li key={e.id} className="relative">
-                    <span className="absolute -left-[2.15rem] top-4 flex h-6 w-6 items-center justify-center rounded-full bg-[var(--bg)] text-sm ring-2 ring-[var(--line)]" aria-hidden="true">{iconFor(e)}</span>
+                    <span className="absolute -left-[2.15rem] top-4 flex h-6 w-6 items-center justify-center rounded-full bg-[#2b1c2b] text-sm ring-2 ring-[var(--line)]" aria-hidden="true">{iconFor(e)}</span>
                     <Link href={`/dates/${e.id}`} className={`card flex gap-4 !p-3 transition-transform hover:-translate-y-0.5 ${upcoming ? "!border-dashed !border-[var(--accent-deep)]" : ""}`}>
                       {cover ? (
                         // eslint-disable-next-line @next/next/no-img-element
                         <img src={cover} alt="" loading="lazy" className="h-20 w-20 shrink-0 rounded-xl object-cover" />
                       ) : (
-                        <span className="flex h-20 w-20 shrink-0 items-center justify-center rounded-xl bg-[var(--bg)] text-3xl" aria-hidden="true">{iconFor(e)}</span>
+                        <span className="flex h-20 w-20 shrink-0 items-center justify-center rounded-xl bg-[var(--inset)] text-3xl" aria-hidden="true">{iconFor(e)}</span>
                       )}
                       <span className="min-w-0 flex-1">
                         <span className="block truncate font-semibold">{e.title}</span>

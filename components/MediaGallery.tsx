@@ -59,7 +59,7 @@ export function MediaGallery({ items, names }: { items: MediaItem[]; names: Reco
             <button
               type="button" onClick={() => { setErr(null); setOpen(i); }}
               aria-label={`Open ${m.type} ${i + 1} of ${count}`}
-              className="relative block aspect-square w-full overflow-hidden rounded-2xl bg-[var(--surface)]"
+              className="relative block aspect-square w-full overflow-hidden rounded-2xl bg-[var(--inset)]"
             >
               {m.thumbUrl || m.type === "image" ? (
                 // eslint-disable-next-line @next/next/no-img-element

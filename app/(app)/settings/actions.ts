@@ -82,8 +82,9 @@ export async function sendTestPush(): Promise<{ sent: number; error?: string }> 
       if (r === "ok") sent++;
       if (r === "gone") await supabase.from("push_subscriptions").delete().eq("id", s.id);
     }
-  } catch {
-    return { sent: 0, error: "Push keys are missing on the server. Check VAPID settings." };
+  } catch (e) {
+    // The message names the setup problem (for example a missing or malformed key); it never contains a secret.
+    return { sent: 0, error: `Push setup problem: ${e instanceof Error ? e.message : "unknown"}` };
   }
   return sent ? { sent } : { sent: 0, error: "The device didn't accept the message. Turn notifications off and on again." };
 }

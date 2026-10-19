@@ -15,14 +15,15 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false, noarchive: true, nosnippet: true },
   manifest: "/manifest.webmanifest",
   icons: { icon: "/icons/icon-192.png", apple: "/icons/apple-touch-icon.png" },
-  appleWebApp: { capable: true, title: "Universe", statusBarStyle: "default" },
+  appleWebApp: { capable: true, title: "Universe", statusBarStyle: "black-translucent" },
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: "#F9E4E8",
+  colorScheme: "dark",
+  themeColor: "#2B1C2B",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

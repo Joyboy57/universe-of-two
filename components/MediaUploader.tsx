@@ -110,7 +110,7 @@ export function MediaUploader({ dateId, coupleId }: { dateId: string; coupleId: 
       {rows.length > 0 && (
         <ul className="space-y-2" aria-live="polite">
           {rows.map((r) => (
-            <li key={r.id} className="flex items-center justify-between gap-3 rounded-2xl border border-[var(--line)] bg-[var(--bg)] px-4 py-2 text-sm">
+            <li key={r.id} className="flex items-center justify-between gap-3 rounded-2xl border border-[var(--line)] bg-[var(--inset)] px-4 py-2 text-sm">
               <span className="truncate">{r.name}</span>
               <span className={r.status === "error" ? "error shrink-0 text-right" : "shrink-0 text-[var(--ink-soft)]"}>{label(r)}</span>
             </li>

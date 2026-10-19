@@ -68,9 +68,9 @@ export function SongAdder() {
         <div className="space-y-2">
           <ul className="space-y-2">
             {results.map((r, i) => (
-              <li key={`${r.url}-${i}`} className="flex items-center gap-3 rounded-2xl bg-[var(--bg)] p-2">
+              <li key={`${r.url}-${i}`} className="flex items-center gap-3 rounded-2xl bg-[var(--inset)] p-2">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                {r.cover ? <img src={r.cover} alt="" loading="lazy" className="h-12 w-12 shrink-0 rounded-lg object-cover" /> : <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-[var(--surface)]" aria-hidden="true">🎵</span>}
+                {r.cover ? <img src={r.cover} alt="" loading="lazy" className="h-12 w-12 shrink-0 rounded-lg object-cover" /> : <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-[var(--inset)]" aria-hidden="true">🎵</span>}
                 <span className="min-w-0 flex-1">
                   <span className="block truncate font-semibold">{r.title}</span>
                   <span className="block truncate text-sm text-[var(--ink-soft)]">{r.artist}</span>
@@ -86,10 +86,10 @@ export function SongAdder() {
       )}
 
       {draft && (
-        <div className="space-y-3 rounded-2xl bg-[var(--bg)] p-3">
+        <div className="space-y-3 rounded-2xl bg-[var(--inset)] p-3">
           <div className="flex items-center gap-3">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            {draft.cover ? <img src={draft.cover} alt="" className="h-14 w-14 rounded-lg object-cover" /> : <span className="flex h-14 w-14 items-center justify-center rounded-lg bg-[var(--surface)]" aria-hidden="true">🎵</span>}
+            {draft.cover ? <img src={draft.cover} alt="" className="h-14 w-14 rounded-lg object-cover" /> : <span className="flex h-14 w-14 items-center justify-center rounded-lg bg-[var(--inset)]" aria-hidden="true">🎵</span>}
             <p className="text-sm text-[var(--ink-soft)]">Check the details, then add it.</p>
           </div>
           <div>

@@ -93,7 +93,7 @@ export default async function TodayPage() {
           <Reveal id={`uo-revealed-q-${day}`}>
             <div className="grid gap-3 sm:grid-cols-2">
               {[myAnswer, theirAnswer].map((a) => (
-                <div key={a.user_id} className="rounded-2xl bg-[var(--bg)] p-4">
+                <div key={a.user_id} className="rounded-2xl bg-[var(--inset)] p-4">
                   <p className="mb-1 text-sm font-semibold text-[var(--accent-deep)]">{name(a.user_id)}</p>
                   <p className="whitespace-pre-wrap">{a.body}</p>
                 </div>

@@ -25,5 +25,13 @@ export async function GET() {
   } catch {}
 
   const ok = Object.values(env).every(Boolean) && supabaseOk && mediaBucketOk;
-  return NextResponse.json({ ok, env, supabaseOk, mediaBucketOk }, { status: ok ? 200 : 503 });
+  // Notification keys (does not affect "ok"). NEXT_PUBLIC_ values are fixed at build time, so after adding one, redeploy.
+  const push = {
+    vapidPublicKey: !!process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY,
+    vapidPrivateKey: !!process.env.VAPID_PRIVATE_KEY,
+    vapidSubject: !!process.env.VAPID_SUBJECT,
+    cronSecret: !!process.env.CRON_SECRET,
+  };
+
+  return NextResponse.json({ ok, env, supabaseOk, mediaBucketOk, push }, { status: ok ? 200 : 503 });
 }

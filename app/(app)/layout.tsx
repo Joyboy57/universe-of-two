@@ -13,7 +13,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   return (
     <AppLock>
     <div data-app-root className="mx-auto min-h-[100dvh] max-w-3xl px-5 pb-28">
-      <header className="flex items-center justify-between py-5">
+      <header className="glass mb-4 mt-3 flex items-center justify-between rounded-full py-1.5 pl-5 pr-1.5">
         <span className="font-display text-lg font-semibold">A Universe of Two</span>
         <form action={signOut}>
           <button className="btn btn-quiet !min-h-10 !px-4 text-sm">Sign out</button>

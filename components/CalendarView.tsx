@@ -149,8 +149,8 @@ export function CalendarView({ entries, names, savedKey, startDate }: Props) {
                 aria-pressed={isSel}
                 className={[
                   "relative flex min-h-[3.6rem] flex-col items-center justify-start rounded-2xl border p-1 text-sm transition-colors sm:min-h-[4.6rem]",
-                  isSel ? "border-transparent bg-[color-mix(in_srgb,var(--accent)_38%,transparent)]" : "border-transparent hover:bg-[var(--bg)]",
-                  has && !isSel ? "bg-[var(--bg)]" : "",
+                  isSel ? "border-transparent bg-[color-mix(in_srgb,var(--accent)_38%,transparent)]" : "border-transparent hover:bg-[var(--inset)]",
+                  has && !isSel ? "bg-[var(--inset)]" : "",
                   planned ? "!border-dashed !border-[var(--accent-deep)]" : "",
                   isToday ? "ring-2 ring-[var(--accent-deep)]" : "",
                 ].join(" ")}
@@ -201,7 +201,7 @@ export function CalendarView({ entries, names, savedKey, startDate }: Props) {
         </div>
 
         {!ready ? (
-          <div className="h-80 animate-pulse rounded-2xl bg-[var(--bg)]" aria-busy="true" aria-label="Loading calendar" />
+          <div className="h-80 animate-pulse rounded-2xl bg-[var(--inset)]" aria-busy="true" aria-label="Loading calendar" />
         ) : (
           <AnimatePresence mode="wait" initial={false} custom={dir}>
             <motion.div

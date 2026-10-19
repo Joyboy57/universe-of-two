@@ -119,7 +119,7 @@ export function AppLock({ children }: { children: React.ReactNode }) {
     <>
       {children}
       {locked && cfg && (
-        <div role="dialog" aria-modal="true" aria-label="App locked" className="fixed inset-0 z-[100] flex flex-col items-center justify-center gap-5 overflow-y-auto px-6 py-8" style={{ background: "var(--bg)" }}>
+        <div role="dialog" aria-modal="true" aria-label="App locked" className="fixed inset-0 z-[100] flex flex-col items-center justify-center gap-5 overflow-y-auto px-6 py-8" style={{ background: "linear-gradient(180deg, var(--bg-top), var(--bg))" }}>
           <Orbit size="5.5rem" />
           <h1 className="font-display text-2xl font-semibold">A Universe of Two</h1>
           <p className="text-sm text-[var(--ink-soft)]">Enter your PIN</p>
@@ -142,7 +142,7 @@ export function AppLock({ children }: { children: React.ReactNode }) {
                 <button
                   key={k} type="button" onClick={() => press(k)} disabled={wait > 0}
                   aria-label={k === "del" ? "Delete last digit" : k}
-                  className="h-16 w-16 touch-manipulation rounded-full border border-[var(--line)] bg-[var(--surface)] text-2xl font-semibold transition-transform active:scale-95 disabled:opacity-50"
+                  className="h-16 w-16 touch-manipulation rounded-full border border-[var(--line)] bg-[var(--inset)] text-2xl font-semibold transition-transform active:scale-95 disabled:opacity-50"
                 >
                   {k === "del" ? "⌫" : k}
                 </button>

@@ -14,7 +14,7 @@ export function AnswerForm({ day, initial, partnerName, partnerAnswered }: Props
   if (initial && !editing) {
     return (
       <div className="space-y-3">
-        <p className="whitespace-pre-wrap rounded-2xl bg-[var(--bg)] p-4">{initial}</p>
+        <p className="whitespace-pre-wrap rounded-2xl bg-[var(--inset)] p-4">{initial}</p>
         <p className="text-sm text-[var(--ink-soft)]">Waiting for {partnerName}'s answer. You can still change yours until they reply.</p>
         <button type="button" className="btn btn-quiet" onClick={() => setEditing(true)}>Change my answer</button>
       </div>

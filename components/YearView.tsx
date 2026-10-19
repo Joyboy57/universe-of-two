@@ -64,7 +64,7 @@ export function YearView({ year, index, counts, today, onPickMonth, onShift }: P
             <button
               key={name} type="button" onClick={() => onPickMonth(m)}
               aria-label={`${name} ${year}, ${count} ${count === 1 ? "date" : "dates"}. Open month`}
-              className="rounded-2xl border border-transparent p-2 text-left transition-colors hover:border-[var(--line)] hover:bg-[var(--bg)]"
+              className="rounded-2xl border border-transparent p-2 text-left transition-colors hover:border-[var(--line)] hover:bg-[var(--inset)]"
             >
               <span className="mb-1 flex items-baseline justify-between">
                 <span className="text-sm font-semibold">{MONTHS_SHORT[m]}</span>
