@@ -8,7 +8,7 @@ import { useEffect } from "react";
  */
 export function LiquidGlassEnhancer({ selector }: { selector: string }) {
   useEffect(() => {
-    if (localStorage.getItem("uo-liquid") === "off") return;
+    if (localStorage.getItem("uo-liquid") !== "on") return; // opt-in: it is experimental
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     let cancelled = false;

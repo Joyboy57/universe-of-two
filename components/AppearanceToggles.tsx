@@ -1,9 +1,12 @@
 "use client";
 import { useEffect, useState } from "react";
 
-function Toggle({ id, label, hint }: { id: string; label: string; hint: string }) {
-  const [on, setOn] = useState(true);
-  useEffect(() => setOn(localStorage.getItem(id) !== "off"), [id]);
+function Toggle({ id, label, hint, defaultOn }: { id: string; label: string; hint: string; defaultOn: boolean }) {
+  const [on, setOn] = useState(defaultOn);
+  useEffect(() => {
+    const v = localStorage.getItem(id);
+    setOn(v === null ? defaultOn : v === "on");
+  }, [id, defaultOn]);
   return (
     <label className="flex items-start gap-3">
       <input
@@ -25,8 +28,8 @@ function Toggle({ id, label, hint }: { id: string; label: string; hint: string }
 export function AppearanceToggles() {
   return (
     <div className="card space-y-4">
-      <Toggle id="uo-3d" label="3D orbit scene" hint="Turn off to save battery. A light 2D version is used instead." />
-      <Toggle id="uo-liquid" label="Liquid glass effect (experimental)" hint="Refracting glass on the clock cards. Turn off if it feels slow or looks glitchy. These settings are per device." />
+      <Toggle id="uo-3d" defaultOn label="3D orbit scene" hint="Turn off to save battery. A light 2D version is used instead." />
+      <Toggle id="uo-liquid" defaultOn={false} label="Liquid glass effect (experimental)" hint="Refracting glass on the clock cards. It can glitch on some phones, so it's off by default. These settings are per device." />
     </div>
   );
 }
